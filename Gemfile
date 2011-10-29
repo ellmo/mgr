@@ -7,6 +7,7 @@ gem 'sqlite3'
 
 # the really welcome gems
 gem 'zurb-foundation' 	# - layout gem
+gem 'simple_form'		# - html form enhancement gem
 gem 'haml-rails'		# - markup replacement gem
 gem 'pry'				# - irb enhancement gem
 gem 'devise'			# - authentication gem

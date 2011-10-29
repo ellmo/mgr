@@ -163,6 +163,9 @@ GEM
       json_pure
       rubyzip
     sexp_processor (3.0.7)
+    simple_form (1.5.2)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     slop (2.1.0)
     sprockets (2.0.3)
       hike (~> 1.2)
@@ -205,6 +208,7 @@ DEPENDENCIES
   rails (= 3.1.0)
   rspec-rails
   sass-rails (~> 3.1.0)
+  simple_form
   sqlite3
   turn
   uglifier
