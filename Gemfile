@@ -1,12 +1,23 @@
 source 'http://rubygems.org'
 
+# the absolute core gems:
 gem 'rails', '3.1.0'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
+gem 'jquery-rails'
 gem 'sqlite3'
 
+# the really welcome gems
+gem 'zurb-foundation' 	# - layout gem
+gem 'pry'				# - irb enhancement gem
+gem 'devise'			# - authentication gem
+gem 'cancan'			# - authorization gem
+
+
+group :development, :test do
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
+	gem 'cucumber-rails'
+	gem 'capybara'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,7 +27,7 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'jquery-rails'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -24,8 +35,7 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+
 
 group :test do
   # Pretty printed test output
