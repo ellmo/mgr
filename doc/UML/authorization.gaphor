@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gaphor xmlns="http://gaphor.sourceforge.net/model" version="3.0" gaphor-version="0.15.0">
+<Package id="55244958-0278-11e1-8c66-0016ead88cd2">
+<name>
+<val><![CDATA[New model]]></val>
+</name>
+<ownedClassifier>
+<reflist>
+<ref refid="5737bf68-0278-11e1-8c66-0016ead88cd2"/>
+<ref refid="58e01716-0278-11e1-8c66-0016ead88cd2"/>
+<ref refid="5b3589c4-0278-11e1-8c66-0016ead88cd2"/>
+</reflist>
+</ownedClassifier>
+<ownedDiagram>
+<reflist>
+<ref refid="55276732-0278-11e1-8c66-0016ead88cd2"/>
+</reflist>
+</ownedDiagram>
+</Package>
+<Diagram id="55276732-0278-11e1-8c66-0016ead88cd2">
+<name>
+<val><![CDATA[main]]></val>
+</name>
+<package>
+<ref refid="55244958-0278-11e1-8c66-0016ead88cd2"/>
+</package>
+<canvas>
+<item type="ActorItem" id="5739805a-0278-11e1-8c66-0016ead88cd2">
+<drawing-style>
+<val>3</val>
+</drawing-style>
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 126.0, 179.0)</val>
+</matrix>
+<width>
+<val>38.0</val>
+</width>
+<height>
+<val>60.0</val>
+</height>
+<subject>
+<ref refid="5737bf68-0278-11e1-8c66-0016ead88cd2"/>
+</subject>
+<show_stereotypes_attrs>
+<val>0</val>
+</show_stereotypes_attrs>
+</item>
+<item type="UseCaseItem" id="58e06cc0-0278-11e1-8c66-0016ead88cd2">
+<drawing-style>
+<val>-1</val>
+</drawing-style>
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 375.0, 132.0)</val>
+</matrix>
+<width>
+<val>120.0</val>
+</width>
+<height>
+<val>53.0</val>
+</height>
+<subject>
+<ref refid="58e01716-0278-11e1-8c66-0016ead88cd2"/>
+</subject>
+<show_stereotypes_attrs>
+<val>0</val>
+</show_stereotypes_attrs>
+</item>
+<item type="AssociationItem" id="5a12865a-0278-11e1-8c66-0016ead88cd2">
+<subject>
+<ref refid="5b3589c4-0278-11e1-8c66-0016ead88cd2"/>
+</subject>
+<show_stereotypes_attrs>
+<val>0</val>
+</show_stereotypes_attrs>
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 164.0, 217.0)</val>
+</matrix>
+<orthogonal>
+<val>0</val>
+</orthogonal>
+<horizontal>
+<val>0</val>
+</horizontal>
+<points>
+<val>[(0.0, 0.0), (211.0, -56.73333333333335)]</val>
+</points>
+<head-connection>
+<ref refid="5739805a-0278-11e1-8c66-0016ead88cd2"/>
+</head-connection>
+<tail-connection>
+<ref refid="58e06cc0-0278-11e1-8c66-0016ead88cd2"/>
+</tail-connection>
+<show-direction>
+<val>0</val>
+</show-direction>
+<head-subject>
+<ref refid="5b35bc1e-0278-11e1-8c66-0016ead88cd2"/>
+</head-subject>
+<tail-subject>
+<ref refid="5b3629ba-0278-11e1-8c66-0016ead88cd2"/>
+</tail-subject>
+</item>
+</canvas>
+</Diagram>
+<Actor id="5737bf68-0278-11e1-8c66-0016ead88cd2">
+<name>
+<val><![CDATA[NewActor]]></val>
+</name>
+<package>
+<ref refid="55244958-0278-11e1-8c66-0016ead88cd2"/>
+</package>
+<presentation>
+<reflist>
+<ref refid="5739805a-0278-11e1-8c66-0016ead88cd2"/>
+</reflist>
+</presentation>
+</Actor>
+<UseCase id="58e01716-0278-11e1-8c66-0016ead88cd2">
+<name>
+<val><![CDATA[NewUseCase]]></val>
+</name>
+<package>
+<ref refid="55244958-0278-11e1-8c66-0016ead88cd2"/>
+</package>
+<presentation>
+<reflist>
+<ref refid="58e06cc0-0278-11e1-8c66-0016ead88cd2"/>
+</reflist>
+</presentation>
+</UseCase>
+<Association id="5b3589c4-0278-11e1-8c66-0016ead88cd2">
+<memberEnd>
+<reflist>
+<ref refid="5b35bc1e-0278-11e1-8c66-0016ead88cd2"/>
+<ref refid="5b3629ba-0278-11e1-8c66-0016ead88cd2"/>
+</reflist>
+</memberEnd>
+<ownedEnd>
+<reflist>
+<ref refid="5b35bc1e-0278-11e1-8c66-0016ead88cd2"/>
+<ref refid="5b3629ba-0278-11e1-8c66-0016ead88cd2"/>
+</reflist>
+</ownedEnd>
+<package>
+<ref refid="55244958-0278-11e1-8c66-0016ead88cd2"/>
+</package>
+<presentation>
+<reflist>
+<ref refid="5a12865a-0278-11e1-8c66-0016ead88cd2"/>
+</reflist>
+</presentation>
+</Association>
+<Property id="5b35bc1e-0278-11e1-8c66-0016ead88cd2">
+<association>
+<ref refid="5b3589c4-0278-11e1-8c66-0016ead88cd2"/>
+</association>
+<lowerValue>
+<ref refid="5b35da28-0278-11e1-8c66-0016ead88cd2"/>
+</lowerValue>
+<owningAssociation>
+<ref refid="5b3589c4-0278-11e1-8c66-0016ead88cd2"/>
+</owningAssociation>
+<presentation>
+<reflist/>
+</presentation>
+<type>
+<ref refid="58e01716-0278-11e1-8c66-0016ead88cd2"/>
+</type>
+</Property>
+<LiteralSpecification id="5b35da28-0278-11e1-8c66-0016ead88cd2"/>
+<Property id="5b3629ba-0278-11e1-8c66-0016ead88cd2">
+<association>
+<ref refid="5b3589c4-0278-11e1-8c66-0016ead88cd2"/>
+</association>
+<lowerValue>
+<ref refid="5b363432-0278-11e1-8c66-0016ead88cd2"/>
+</lowerValue>
+<owningAssociation>
+<ref refid="5b3589c4-0278-11e1-8c66-0016ead88cd2"/>
+</owningAssociation>
+<presentation>
+<reflist/>
+</presentation>
+<type>
+<ref refid="5737bf68-0278-11e1-8c66-0016ead88cd2"/>
+</type>
+</Property>
+<LiteralSpecification id="5b363432-0278-11e1-8c66-0016ead88cd2"/>
+</gaphor>

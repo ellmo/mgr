@@ -1,6 +1,6 @@
-# Read about factories at http://github.com/thoughtbot/factory_girl
-
-FactoryGirl.define do
-  factory :user do
-  end
+Factory.define :user do |usr|
+	usr.sequence(:login) { |n| "user_#{n}" }
+	usr.sequence(:email) {|n| "user_#{n}@example.com"}
+	usr.password "jfhsdk2332"
+	usr.password_confirmation {|u| u.password}
 end

@@ -1,17 +1,13 @@
 %h2 Sign up
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %div
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div= f.submit "Sign up"
-= render :partial => "devise/shared/links"
+.eight.columns
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "nice"}) do |f|
+    %div
+      = devise_error_messages!
+      = f.input :login, :wrapper_html => {:class => "form-field"}
+      = f.input :password, :wrapper_html => {:class => "form-field"}
+      = f.input :password_confirmation, :wrapper_html => {:class => "form-field"}   
+    %div
+      = f.button :submit
+  = render :partial => "devise/shared/links"
+
+    
