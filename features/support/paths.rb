@@ -8,7 +8,7 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /^the home\s?page$/
+    when /^root$/
       '/'
     when /the new authenticate page/
       new_authenticate_path
@@ -22,7 +22,7 @@ module NavigationHelpers
 
     else
       begin
-        page_name =~ /^the (.*) page$/
+        page_name =~ /^(.*)$/
         path_components = $1.split(/\s+/)
         self.send(path_components.push('path').join('_').to_sym)
       rescue NoMethodError, ArgumentError
