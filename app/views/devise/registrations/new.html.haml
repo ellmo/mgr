@@ -3,6 +3,7 @@
   = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "nice"}) do |f|
     %div
       = devise_error_messages!
+      = f.input :email, :wrapper_html => {:class => "form-field"}
       = f.input :login, :wrapper_html => {:class => "form-field"}
       = f.input :password, :wrapper_html => {:class => "form-field"}
       = f.input :password_confirmation, :wrapper_html => {:class => "form-field"}   

@@ -11,26 +11,21 @@ Zakładając /^że jestem na stronie "(.+)"$/ do |arg1|
   steps "Given I am on #{arg1}"
 end
 
-Zakładając /^że nie jestem zalogowany$/ do
-  current_user = nil
-end
-
-Jeżeli /^niezalogowany użytkownik loguje się z widoku za pomocą kredencjałów "(.+)" oraz "(.+)"$/ do |arg1, arg2|
+Jeżeli /^niezalogowany użytkownik loguje się z widoku za pomocą kredencjałów "(.+)" oraz "(.+)"$/ do |login, pass|
   visit new_user_session_path
-  fill_in "user_email", :with => login
+  fill_in "user_login", :with => login
   fill_in "user_password", :with => pass
-  click_button "user_submit"
-  current_user = User.find_by_login(login)
+  click_button "Sign in"
 end
 
-Wtedy /^trafię na stronę "(.+)"$/ do |arg1|
+Wtedy /^trafię na stronę "(.+)"$/ do |page_name|
   assert_equal path_to(page_name), current_path
 end
 
-Wtedy /^będzie stworzona sesja dla użytkownika "(.+)"$/ do |arg1|
+Wtedy /^będzie widoczne powitanie dla użytkownika "(.+)"$/ do |login|
   current_user.should == User.find_by_login(login)
 end
 
-Wtedy /^będę widział informację "(.+)"$/ do |arg1|
-  page.should have_content(msg1)
+Wtedy /^będę widział informację "(.+)"$/ do |msg|
+  page.should have_content(msg)
 end
