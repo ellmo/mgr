@@ -22,10 +22,6 @@ Wtedy /^trafię na stronę "(.+)"$/ do |page_name|
   assert_equal path_to(page_name), current_path
 end
 
-Wtedy /^będzie widoczne powitanie dla użytkownika "(.+)"$/ do |login|
-  current_user.should == User.find_by_login(login)
-end
-
 Wtedy /^będę widział informację "(.+)"$/ do |msg|
   page.should have_content(msg)
 end

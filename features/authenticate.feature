@@ -11,5 +11,4 @@ Właściwość: Autoryzacja
     Oraz że jestem na stronie "root"
     Jeżeli niezalogowany użytkownik loguje się z widoku za pomocą kredencjałów "ellmo" oraz "haslo1"
     Wtedy trafię na stronę "root"
-    Oraz będzie widoczne powitanie dla użytkownika "ellmo"
     Oraz będę widział informację "Zalogowałeś się jako ellmo"

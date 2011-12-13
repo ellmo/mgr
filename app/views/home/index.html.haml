@@ -3,4 +3,6 @@
 -unless current_user
 	= link_to "Sign in", :new_user_session
 -else
-	= link_to "Sign out", :destroy_user_session, :method => :delete
+	%p
+		= "Zalogowałeś się jako #{current_user.login}"
+		= link_to "Sign out", :destroy_user_session, :method => :delete
