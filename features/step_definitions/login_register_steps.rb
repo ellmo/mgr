@@ -29,13 +29,31 @@ Jeżeli /^wypełnię formularz logowania danymi$/ do |table|
   end
 end
 
+Jeżeli /^wypełnię formularz rejestracji danymi$/ do |table|
+  table.hashes.each_with_index do |hash, index|
+    fill_in("user_email", :with => hash[:email])
+    fill_in("user_login", :with => hash[:login])
+    fill_in("user_password", :with => hash[:password])
+    fill_in("user_password_confirmation", :with => hash[:password])
+  end
+end
+
 Wtedy /^będę widział formularz logowania$/ do
+  page.should have_selector("form", :id => "user_new")
+end
+
+Wtedy /^będę widział formularz rejestracji$/ do
   page.should have_selector("form", :id => "user_new")
 end
 
 Wtedy /^trafię na stronę "(.+)"$/ do |page_name|
   assert_equal path_to(page_name), current_path
 end
+
+Wtedy /^w bazie danych znajdzie się użytkownik "(.+)"$/ do |login|
+  User.find_by_login(login).should_not be_nil
+end
+
 
 Wtedy /^będę widział informację "(.+)"$/ do |msg|
   page.should have_content(msg)

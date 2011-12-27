@@ -1,8 +1,13 @@
 %h1 Home#index
 
 -unless current_user
-	= link_to "Sign in", :new_user_session
+  %span
+    [
+    = link_to "Sign in", :new_user_session
+    |
+    = link_to "Sign up", :new_user_registration
+    ]
 -else
-	%p
-		= "Zalogowałeś się jako #{current_user.login}"
-		= link_to "Sign out", :destroy_user_session, :method => :delete
+  %p
+    = "Zalogowałeś się jako #{current_user.login}"
+    = link_to "Sign out", :destroy_user_session, :method => :delete

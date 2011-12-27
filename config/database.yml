@@ -3,12 +3,14 @@ development:
   encoding: utf8
   database: mgr_dev
   username: root
+  password: pass
 
 test: &test
   adapter: mysql2
   encoding: utf8
   database: mgr_test
   username: root
+  password: pass
 
 cucumber:
   <<: *test

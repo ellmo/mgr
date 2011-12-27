@@ -28,7 +28,6 @@ Właściwość: Uwierzytelnianie i Rejestracja
       | ellmo                   | haslo123 |
       | jkb.zuchowski@gmail.com | haslo123 |
   
-  @wip2
   Scenariusz: Widoczność formularza rejestracji
     Zakładając że jestem na stronie "root"
     Oraz że widzę odnośnik "Sign up"
@@ -36,11 +35,12 @@ Właściwość: Uwierzytelnianie i Rejestracja
     Wtedy trafię na stronę "sign_up"
     Oraz będę widział formularz rejestracji
 
-  @wip3
   Scenariusz: Poprawne rejestrowanie
     Zakładając że jestem na stronie "sign_up"
     Jeżeli wypełnię formularz rejestracji danymi
-      | email               | login | password | password_confirm | 
-      | ellmunzai@gmail.com | ellmo | haslo123 | haslo123         |
-    Oraz kliknę odnośnik
+      | email                   | login | password |
+      | jkb.zuchowski@gmail.com | ellmo | haslo123 |
+    Oraz kliknę przycisk "Register"
+    Wtedy trafię na stronę "root"
+    Oraz w bazie danych znajdzie się użytkownik "ellmo"
     Oraz będę widział informację "Zalogowałeś się jako ellmo"
