@@ -6,4 +6,5 @@ tmp/
 *.swp
 *.swo
 *.sublime-*
-config/database.*
+config/database.yml
+config/database.yaml
