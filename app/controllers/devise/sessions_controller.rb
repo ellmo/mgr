@@ -14,7 +14,6 @@ class Devise::SessionsController < ApplicationController
   def create
     resource = warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#new")
     set_flash_message(:notice, :signed_in) if is_navigational_format?
-    Rails.logger.info "\nRESOURCE\n\n #{resource}"
     sign_in(resource_name, resource)
     respond_with resource, :location => redirect_location(resource_name, resource)
   end

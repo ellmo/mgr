@@ -13,6 +13,9 @@ class Devise::RegistrationsController < ApplicationController
   def create
     build_resource
 
+    Rails.logger.info "\n\n#{resource}\n"
+    Rails.logger.info "#{resource_name}\n\n"
+
     if resource.save
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
@@ -25,7 +28,7 @@ class Devise::RegistrationsController < ApplicationController
       end
     else
       clean_up_passwords(resource)
-      respond_with_navigational(resource) { render_with_scope :new }
+      redirect_to(new_user_registration_path, :alert => resource.errors.full_messages)
     end
   end
 

@@ -1,6 +1,8 @@
 %h2 Sign in
-%p.notice= notice
-%p.alert= alert
+-if notice
+  %p.notice= notice
+-if alert
+  %p.alert= alert
 .eight.columns
   = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .inputs

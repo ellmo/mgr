@@ -13,7 +13,6 @@ gem 'pry'               # - irb enhancement gem
 gem 'devise'            # - authentication gem
 gem 'cancan'            # - authorization gem
 
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
@@ -21,6 +20,7 @@ group :development, :test do
   gem 'capybara'
   gem 'minitest'
   gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :assets do

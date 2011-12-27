@@ -28,6 +28,23 @@ Właściwość: Uwierzytelnianie i Rejestracja
       | ellmo                   | haslo123 |
       | jkb.zuchowski@gmail.com | haslo123 |
   
+  Szablon scenariusza: błędne logowanie
+    Zakładając że mamy danych użytkowników
+      | email                   | login | password   |
+      | jkb.zuchowski@gmail.com | ellmo | haslo123   |
+    Oraz że jestem na stronie "sign_in"
+    Jeżeli wypełnię formularz logowania danymi
+      | user_login       | user_password   |
+      | <login_or_email> | <pass>          |
+    Oraz kliknę przycisk "Sign in"
+    Wtedy trafię na stronę "sign_in"
+    Oraz będę widział informację o błędach
+
+    Przykłady:
+      | login_or_email          | pass        |
+      | niepoprawny             | haslo123    |
+      | ellmo                   | niepoprawne |
+  
   Scenariusz: Widoczność formularza rejestracji
     Zakładając że jestem na stronie "root"
     Oraz że widzę odnośnik "Sign up"
@@ -44,3 +61,25 @@ Właściwość: Uwierzytelnianie i Rejestracja
     Wtedy trafię na stronę "root"
     Oraz w bazie danych znajdzie się użytkownik "ellmo"
     Oraz będę widział informację "Zalogowałeś się jako ellmo"
+
+  Szablon scenariusza: Niepoprawne rejestrowanie
+    Zakładając że mamy danych użytkowników
+      | email                   | login | password   |
+      | jkb.zuchowski@gmail.com | ellmo | haslo123   |
+    Oraz że liczba użytkowników wynosi "1"
+    Oraz że jestem na stronie "sign_up"
+    Jeżeli wypełnię formularz rejestracji danymi
+      | email   | login   | password   |
+      | <email> | <login> | <password> |
+    Oraz kliknę przycisk "Register"
+    Wtedy trafię na stronę "sign_up"
+    Oraz w bazie danych nie znajdzie się nowy użytkownik
+    Oraz będę widział informację o błędach
+
+    Przykłady:
+      | email                   | login | password |
+      |                         | ellmo | haslo123 |
+      | jkb.zuchowski@gmail.com |       | haslo123 |  
+      | jkb.zuchowski@gmail.com |       |          |  
+      | niepoprawny_adres       | ellmo | haslo123 |
+      | jkb.zuchowski@gmail.com | ellmo | haslo123 |
