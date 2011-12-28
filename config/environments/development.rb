@@ -1,4 +1,5 @@
 Mgr::Application.configure do
+  load Rails.root.join("config/environments/secret_data.rb")
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -14,7 +15,7 @@ Mgr::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -34,8 +35,8 @@ Mgr::Application.configure do
         :address              => "smtp.gmail.com",
         :port                 => 587,
         :domain               => 'gmail.com',
-        :user_name            => 'doom.the.way.id.did@gmail.com',
-        :password             => '77octopus88',
+        :user_name            => SecretData::EMAIL,
+        :password             => SecretData::PASSW,
         :authentication       => 'plain',
         :enable_starttls_auto => true
     }

@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
   include Devise::Mailers::Helpers
-  default :from => "ellmunzai@gmail.com"
+  default :from => "jkb.zuchowski@gmail.com"
   
   def confirmation_instructions(record)
     devise_mail(record, :confirmation_instructions)

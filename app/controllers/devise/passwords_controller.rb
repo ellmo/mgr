@@ -16,7 +16,7 @@ class Devise::PasswordsController < ApplicationController
       set_flash_message(:notice, :send_instructions) if is_navigational_format?
       respond_with({}, :location => after_sending_reset_password_instructions_path_for(resource_name))
     else
-      respond_with_navigational(resource){ render_with_scope :new }
+      redirect_to(new_user_password_path, :alert => resource.errors.full_messages)
     end
   end
 

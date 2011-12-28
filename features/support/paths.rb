@@ -9,6 +9,8 @@ module NavigationHelpers
       new_user_session_path
     when "sign_up"
       new_user_registration_path
+    when "new_user_password"
+      new_user_password_path
 
     else
       begin
