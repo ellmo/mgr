@@ -16,5 +16,5 @@ Wtedy /^zostanie wysłany email$/ do
 end
 
 Wtedy /^nie zostanie wysłany email$/ do
-    ActionMailer::Base.deliveries.should be_empty
+  ActionMailer::Base.deliveries.should be_empty
 end
