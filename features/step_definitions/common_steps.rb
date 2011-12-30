@@ -1,5 +1,20 @@
 #encoding: utf-8
 
+Zakładając /^że nie jestem zalogowany$/ do
+  visit '/logout'
+end
+
+Zakładając /^że jestem zalogowany jako użytkownik "(.+)"$/ do |login|
+  email = 'jkb.zuchowski@gmail.com'
+  password = 'haslo123'
+  User.new(:login => login, :email => email, :password => password, :password_confirmation => password).save!
+
+  visit '/users/sign_in'
+  fill_in "user_login", :with => email
+  fill_in "user_password", :with => password
+  click_button "Sign in"
+end
+
 Zakładając /^że mamy danych użytkowników$/ do |table|
   table.hashes.each do |hash|
     Factory(:user, hash)
@@ -45,6 +60,10 @@ end
 
 Wtedy /^będę widział informację "(.+)"$/ do |msg|
   page.should have_content(msg)
+end
+
+Wtedy /^nie będę widział odnośnika "(.+)"$/ do |link|
+  page.should_not have_link(link)
 end
 
 Wtedy /^będę widział informację o błędach$/ do

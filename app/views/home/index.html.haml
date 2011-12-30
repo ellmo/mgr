@@ -11,3 +11,5 @@
   %p
     = "Zalogowałeś się jako #{current_user.login}"
     = link_to "Sign out", :destroy_user_session, :method => :delete
+
+= link_to "Forum", forum_path

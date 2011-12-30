@@ -1,0 +1,21 @@
+%h1 Listing posts
+
+%table{ :id => "posts_list"}
+  %tr
+    %th User
+    %th Content
+    %th
+    %th
+    %th
+
+  - @posts.each do |post|
+    %tr
+      %td= post.user_id
+      %td= post.content
+      %td= link_to 'Show', post
+      %td= link_to 'Edit', edit_post_path(post)
+      %td= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
+
+%br
+-if can? :manage, Post
+  = link_to 'New post', new_post_path
